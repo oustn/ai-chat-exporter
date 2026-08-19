@@ -39,6 +39,7 @@ export async function exportElementsAsPng({ elements, title }: PngExportInput): 
     const dataUrl = await toPng(stage, {
       bgcolor: bodyStyle.backgroundColor || "#ffffff",
       cacheBust: true,
+      disableEmbedFonts: true,
       height: stage.scrollHeight,
       width: stage.scrollWidth,
     });
