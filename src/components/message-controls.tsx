@@ -18,7 +18,7 @@ export function MessageControls({ target, selected, onToggle, onCopy }: MessageC
 
   return (
     <div
-      className={`pointer-events-auto fixed flex h-9 items-center gap-2 rounded-md border bg-background px-2 shadow-md transition-colors ${selected ? "border-primary bg-primary/10" : "border-border"}`}
+      className={`pointer-events-auto fixed z-50 flex h-9 items-center gap-2 rounded-md border bg-background px-2 shadow-md transition-colors ${selected ? "border-primary bg-primary/10" : "border-border"}`}
       style={{
         top: Math.max(8, target.rect.top + 8),
         right: Math.max(12, window.innerWidth - target.rect.right + 12),

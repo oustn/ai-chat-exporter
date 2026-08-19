@@ -4,6 +4,7 @@ import { defineContentScript } from "wxt/utils/define-content-script";
 
 import { ContentApp } from "./ContentApp";
 import "./content.css";
+import { configureContentUiLayer } from "./ui-layer";
 
 export default defineContentScript({
   matches: ["https://chatgpt.com/*", "https://gemini.google.com/*"],
@@ -26,8 +27,8 @@ export default defineContentScript({
       position: "modal",
       zIndex: 2_147_483_647,
       isolateEvents: true,
-      onMount(container) {
-        container.style.pointerEvents = "none";
+      onMount(container, _shadow, shadowHost) {
+        configureContentUiLayer(shadowHost, container);
         const root = ReactDOM.createRoot(container);
         root.render(<ContentApp />);
         return root;

@@ -19,7 +19,7 @@ export function ExportToolbar({
 }: ExportToolbarProps) {
   if (!count) return null;
   return (
-    <div className="pointer-events-auto fixed bottom-24 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-lg border bg-white p-2 pl-3 shadow-xl">
+    <div className="pointer-events-auto fixed bottom-24 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-lg border bg-white p-2 pl-3 shadow-xl">
       <span className="whitespace-nowrap text-xs font-medium">已选 {count} 条</span>
       <Button size="sm" variant="outline" onClick={onCopy}>
         <Copy className="size-3.5" />
