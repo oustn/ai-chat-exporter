@@ -9,6 +9,7 @@ vi.mock("dom-to-image-more", () => ({
 
 describe("exportElementsAsPng", () => {
   beforeEach(() => {
+    vi.mocked(toPng).mockClear();
     vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(() => undefined);
   });
 
@@ -28,5 +29,18 @@ describe("exportElementsAsPng", () => {
       expect.any(HTMLElement),
       expect.objectContaining({ disableEmbedFonts: true }),
     );
+  });
+
+  it("uses a wider canvas on desktop screens", async () => {
+    vi.spyOn(window, "innerWidth", "get").mockReturnValue(1440);
+    const element = document.createElement("article");
+    element.textContent = "Wide conversation";
+    document.body.append(element);
+
+    await exportElementsAsPng({ elements: [element], title: "Chat" });
+
+    const stage = vi.mocked(toPng).mock.calls[0]?.[0];
+    expect(stage).toBeInstanceOf(HTMLElement);
+    expect((stage as HTMLElement).style.width).toBe("1200px");
   });
 });

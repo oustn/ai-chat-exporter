@@ -17,7 +17,7 @@ export async function exportElementsAsPng({ elements, title }: PngExportInput): 
     position: "fixed",
     left: "-100000px",
     top: "0",
-    width: `${Math.min(900, Math.max(360, window.innerWidth - 48))}px`,
+    width: `${Math.min(1200, Math.max(360, window.innerWidth - 48))}px`,
     padding: "24px 0",
     background: bodyStyle.backgroundColor || "#ffffff",
     color: bodyStyle.color || "#202123",
