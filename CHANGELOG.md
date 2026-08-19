@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/oustn/ai-chat-exporter/compare/v2.1.1...v2.2.0) (2026-08-19)
+
+
+### Features
+
+* add extension icon ([6f57fe0](https://github.com/oustn/ai-chat-exporter/commit/6f57fe05bece0b812b82a9f1bf8e8e7e950df53f))
+
 ## [2.1.1](https://github.com/oustn/ai-chat-exporter/compare/v2.1.0...v2.1.1) (2026-08-19)
 
 

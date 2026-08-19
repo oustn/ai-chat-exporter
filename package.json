@@ -1,6 +1,6 @@
 {
   "name": "ai-chat-exporter",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "private": true,
   "description": "Export AI chat conversations as Markdown or PNG from a browser extension.",
   "homepage": "https://github.com/oustn/ai-chat-exporter#readme",
