@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/oustn/ai-chat-exporter/compare/v2.3.0...v2.3.1) (2026-08-19)
+
+
+### Bug Fixes
+
+* make page export controls clickable ([71c9bec](https://github.com/oustn/ai-chat-exporter/commit/71c9bec6dc557697898bdd6d3a5a35bc30b9b89d))
+
 # [2.3.0](https://github.com/oustn/ai-chat-exporter/compare/v2.2.1...v2.3.0) (2026-08-19)
 
 
