@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="AI Chat Exporter">
+  <rect x="64" y="64" width="896" height="896" rx="224" fill="#171a1f" />
+  <path
+    fill="#ffffff"
+    d="M340 224h344c72 0 130 58 130 130v192c0 72-58 130-130 130H492L332 816l24-140h-16c-72 0-130-58-130-130V354c0-72 58-130 130-130Z"
+  />
+  <path
+    fill="none"
+    stroke="#12b981"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="72"
+    d="M512 326v224m-106-98 106 106 106-106"
+  />
+</svg>

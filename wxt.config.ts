@@ -12,6 +12,14 @@ export default defineConfig({
     version: packageJson.version,
     permissions: ["activeTab", "scripting", "downloads"],
     host_permissions: ["https://chatgpt.com/*"],
+    action: {
+      default_icon: {
+        16: "icons/16.png",
+        32: "icons/32.png",
+        48: "icons/48.png",
+        128: "icons/128.png",
+      },
+    },
   },
   vite: () => ({
     plugins: [react()],
