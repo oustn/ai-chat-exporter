@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/oustn/ai-chat-exporter/compare/v2.2.0...v2.2.1) (2026-08-19)
+
+
+### Bug Fixes
+
+* avoid CSP errors during PNG export ([69dbffb](https://github.com/oustn/ai-chat-exporter/commit/69dbffbce605e7cc89d9c147cdd182c6a074218e))
+
 # [2.2.0](https://github.com/oustn/ai-chat-exporter/compare/v2.1.1...v2.2.0) (2026-08-19)
 
 
