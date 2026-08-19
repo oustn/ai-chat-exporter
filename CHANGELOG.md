@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/oustn/ai-chat-exporter/compare/v2.3.1...v2.3.2) (2026-08-19)
+
+
+### Bug Fixes
+
+* widen PNG export canvas ([dbc020e](https://github.com/oustn/ai-chat-exporter/commit/dbc020e8b4255e47afaba6d1beaf20dd602e3e18))
+
 ## [2.3.1](https://github.com/oustn/ai-chat-exporter/compare/v2.3.0...v2.3.1) (2026-08-19)
 
 
