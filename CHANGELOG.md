@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/oustn/ai-chat-exporter/compare/v2.2.1...v2.3.0) (2026-08-19)
+
+
+### Features
+
+* support Gemini page exports ([5e3c1eb](https://github.com/oustn/ai-chat-exporter/commit/5e3c1eb672ac2393853534dcef470b07ebf54d16))
+
 ## [2.2.1](https://github.com/oustn/ai-chat-exporter/compare/v2.2.0...v2.2.1) (2026-08-19)
 
 
