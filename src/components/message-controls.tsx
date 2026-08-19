@@ -1,6 +1,6 @@
 import { Copy } from "lucide-react";
 
-import type { PageMessageTarget } from "../platforms/chatgpt/dom";
+import type { PageMessageTarget } from "../platforms/page-messages";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";

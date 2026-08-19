@@ -4,15 +4,16 @@
 [![Release](https://github.com/oustn/ai-chat-exporter/actions/workflows/release.yml/badge.svg)](https://github.com/oustn/ai-chat-exporter/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-基于 WXT、TypeScript、React、Tailwind CSS 和 shadcn/ui 风格组件构建的浏览器扩展。当前支持 ChatGPT，并通过平台适配器结构为 Gemini、DeepSeek 等产品预留接入边界。
+基于 WXT、TypeScript、React、Tailwind CSS 和 shadcn/ui 风格组件构建的浏览器扩展。当前支持 ChatGPT 和 Gemini 页面，并通过平台适配器结构为 DeepSeek 等产品预留接入边界。
 
 ## 功能
 
-- Popup 分页读取 ChatGPT 会话列表。
-- 下载完整会话为 Markdown。
-- 在当前会话页面选择单条或多条消息。
+- Popup 分页读取 ChatGPT 会话列表并下载完整会话 Markdown。
+- 在 ChatGPT 和 Gemini 当前会话页面选择单条或多条消息。
 - 复制选中消息的 Markdown。
 - 将选中的已渲染消息导出为 PNG。
+
+Gemini 当前仅支持页面级消息复制和 PNG 导出，不支持 popup 会话列表或完整会话接口导出。
 
 当前版本不支持 PDF 导出。
 
@@ -78,20 +79,24 @@ src/
   exporters/                Markdown、PNG 导出器
   platforms/
     chatgpt/                ChatGPT API、认证、归一化和 DOM adapter
-    registry.ts             平台注册表
+    gemini/                 Gemini 当前页面 DOM adapter
+    page-messages.ts        页面消息共享类型与转换
+    page-registry.ts        页面消息扫描器分派
+    registry.ts             Popup 数据平台注册表
   runtime/                  扩展运行时消息
   styles/                   Tailwind 基础样式
 ```
 
 ## 平台接入
 
-新增平台时，在 `src/platforms/<platform>/` 实现：
+页面级导出与 popup 数据导出是两组独立能力。新增页面级平台时，在 `src/platforms/<platform>/` 实现 URL 匹配和当前页面消息 DOM 扫描，并在 `page-registry.ts` 注册。
+
+只有平台具备稳定的数据源时，才需要继续实现 popup 能力：
 
 1. URL 匹配与平台元数据。
 2. 会话列表和完整会话读取。
 3. 平台响应到 `ConversationDocument` 的归一化。
-4. 当前页面消息 DOM 的扫描与提取。
-5. 在 `src/platforms/registry.ts` 注册平台。
+4. 在 `src/platforms/registry.ts` 注册平台。
 
 平台模块只处理数据源和 DOM 差异，Markdown/PNG 格式逻辑保留在通用导出器中。
 

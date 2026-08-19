@@ -6,7 +6,7 @@ import { ContentApp } from "./ContentApp";
 import "./content.css";
 
 export default defineContentScript({
-  matches: ["https://chatgpt.com/*"],
+  matches: ["https://chatgpt.com/*", "https://gemini.google.com/*"],
   cssInjectionMode: "ui",
   async main(ctx) {
     const selectionStyle = document.createElement("style");

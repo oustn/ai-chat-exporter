@@ -11,7 +11,7 @@ export default defineConfig({
     description: "Export AI chat conversations as Markdown or PNG.",
     version: packageJson.version,
     permissions: ["activeTab", "scripting", "downloads"],
-    host_permissions: ["https://chatgpt.com/*"],
+    host_permissions: ["https://chatgpt.com/*", "https://gemini.google.com/*"],
     action: {
       default_icon: {
         16: "icons/16.png",

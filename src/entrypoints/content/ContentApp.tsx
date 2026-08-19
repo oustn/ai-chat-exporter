@@ -6,11 +6,11 @@ import { TooltipProvider } from "../../components/ui/tooltip";
 import { selectedMessagesToMarkdown } from "../../exporters";
 import { exportElementsAsPng } from "../../exporters/png";
 import {
-  scanChatGptPageMessages,
   sortTargetsByDocumentOrder,
   targetToMessageBlock,
   type PageMessageTarget,
-} from "../../platforms/chatgpt/dom";
+} from "../../platforms/page-messages";
+import { scanCurrentPageMessages } from "../../platforms/page-registry";
 
 async function copyText(text: string): Promise<void> {
   try {
@@ -29,12 +29,12 @@ async function copyText(text: string): Promise<void> {
 }
 
 export function ContentApp() {
-  const [targets, setTargets] = useState<PageMessageTarget[]>(scanChatGptPageMessages);
+  const [targets, setTargets] = useState<PageMessageTarget[]>(scanCurrentPageMessages);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [toast, setToast] = useState<string | null>(null);
   const [exportingPng, setExportingPng] = useState(false);
 
-  const scan = useCallback(() => setTargets(scanChatGptPageMessages()), []);
+  const scan = useCallback(() => setTargets(scanCurrentPageMessages()), []);
 
   useEffect(() => {
     let frame = 0;
