@@ -1,0 +1,8 @@
+node_modules/
+.output/
+.wxt/
+work/
+outputs/*.zip
+outputs/
+*.log
+.DS_Store

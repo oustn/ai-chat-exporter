@@ -1,0 +1,24 @@
+@import "../../styles/tailwind.css";
+
+:host {
+  pointer-events: none !important;
+}
+
+[data-selected="true"] {
+  opacity: 1;
+}
+
+.toast {
+  pointer-events: none;
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(420px, calc(100vw - 32px));
+  border-radius: 6px;
+  background: hsl(var(--foreground));
+  color: white;
+  padding: 9px 13px;
+  font-size: 13px;
+  box-shadow: 0 6px 22px rgb(0 0 0 / 22%);
+}
